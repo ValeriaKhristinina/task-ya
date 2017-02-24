@@ -1,4 +1,4 @@
-.login{
+.login {
   display: none;
   position: fixed;
   top: 50%;
@@ -6,14 +6,14 @@
   transform: translate(-50%, -50%);
   width: 500px;
   height: 400px;
-  background-color: yellow;
+  background-color: @clr-white;
   z-index: 15;
 
-  &--show{
+  &--show {
     display: block;
   }
 
-  &__close{
+  &__close {
     position: absolute;
     right: 0;
     text-indent: -9999px;
@@ -21,27 +21,28 @@
     border: none;
     cursor: pointer;
 
-      &::before,
-      &::after {
-        content: "";
-        position: absolute;
-        top: 8px;
-        right: 0;
-        width: 15px;
-        height: 2px;
-        background-color: @clr-black;
-        z-index: 3;
-      }
-      &::before {
-        transform: rotate(45deg);
-      }
-      &::after {
-        transform: rotate(-45deg);
-      }
+    &::after,
+    &::before {
+      content: "";
+      position: absolute;
+      top: 8px;
+      right: 0;
+      width: 15px;
+      height: 2px;
+      background-color: @clr-black;
+      z-index: 3;
+    }
 
-      &:focus{
-        outline: none;
-      }
+    &::before {
+      transform: rotate(45deg);
+    }
 
+    &::after {
+      transform: rotate(-45deg);
+    }
+
+    &:focus {
+      outline: none;
+    }
   }
 }
