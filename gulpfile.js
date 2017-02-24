@@ -9,13 +9,13 @@ const destName = 'public';
 
 //cборка стилей
 gulp.task('style', function() {
-    //проходит по всем папкам в source/style и берет все файла с расширением .less
-    return gulp.src('./source/style/**/*.less')
+    //берёт файл style.less
+    return gulp.src('./source/less/style.less')
         .pipe(less()) // переводит less в обычный css
         .pipe(concat('style.css')) // соединяем все файлы в один style.css
-        .pipe(cleanCSS({
-            compatibility: 'ie8'
-        })) // минимизируем файл
+        //.pipe(cleanCSS({
+        //    compatibility: 'ie8'
+        //})) // минимизируем файл
         .pipe(gulp.dest(destName + '/style')); // отправляем получившийся результат в папку public
 });
 
@@ -34,7 +34,7 @@ gulp.task('clean', function() {
 
 //следит за измененим стилей и ассетсов, и если что-то в файлах изменилось, запускает соответсвующие задачи
 gulp.task('watch', function() {
-    gulp.watch('source/style/**/*.*', gulp.series('style'))
+    gulp.watch('source/less/**/*.*', gulp.series('style'))
     gulp.watch('source/assets/**/*.*', gulp.series('assets'))
 })
 
