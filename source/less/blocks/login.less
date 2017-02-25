@@ -4,8 +4,8 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 500px;
-  height: 400px;
+  min-width: 100px;
+  min-height: 100px;
   background-color: @clr-white;
   z-index: 15;
 
@@ -44,5 +44,10 @@
     &:focus {
       outline: none;
     }
+  }
+
+  &__content{
+    width: 500px;
+    height: 400px;
   }
 }
