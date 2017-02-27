@@ -1,0 +1,33 @@
+.example {
+  &__btn {
+    border: 1px solid @clr-black;
+    background-color: transparent;
+    cursor: pointer;
+    &:focus {
+      outline: none;
+    }
+    &:active {
+      background-color: @clr-verylightgrey;
+    }
+  }
+  &__wrapper {
+    display: none;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-top: 10px;
+    & div {
+      width: 100px;
+      height: 100px;
+      background-color: @clr-verylightgrey;
+      margin-right: 10px;
+      margin-bottom: 10px;
+      &:last-child {
+        margin-right: 0;
+        margin-bottom: 0;
+      }
+    }
+    &--show {
+      display: flex;
+    }
+  }
+}
